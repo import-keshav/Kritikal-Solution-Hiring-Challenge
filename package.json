@@ -1,0 +1,28 @@
+{
+  "name": "kritikal-solution-hiring-challenge",
+  "version": "1.0.0",
+  "description": "A web visualization redis monitoring program. Performance optimized and very easy to install and deploy, base on Flask and sqlite. the monitor data come from redis.info().",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/import-keshav/Kritikal-Solution-Hiring-Challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "live": "nodemon server.js",
+  "bugs": {
+    "url": "https://github.com/import-keshav/Kritikal-Solution-Hiring-Challenge/issues"
+  },
+  "homepage": "https://github.com/import-keshav/Kritikal-Solution-Hiring-Challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "hashlib": "^1.0.1",
+    "nodemon": "^2.0.6",
+    "redis": "^3.0.2",
+    "sqlite3": "^5.0.0"
+  }
+}

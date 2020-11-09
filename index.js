@@ -1,15 +1,7 @@
 var RedisMonitor = require('./utils/RedisMonitor');
+var Models = require('./database/models/model');
 // var hashlib = require('hashlib');
 
-const sqlite3 = require('sqlite3').verbose();
-const DB_PATH = './sqlite.db'
-const db = new sqlite3.Database(DB_PATH, function(err){
-    if (err) {
-        console.log(err)
-        return
-    }
-    console.log('Connected to ' + DB_PATH + ' database.')
-});
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
@@ -101,10 +93,12 @@ app.post('/api/add', jsonParser, (req, res) => {
 		})
 	}
 
-	db.run(sql, [data['port'], data['host'], data['port'], data['password'], data['add_time']], function(err){
-	    if (err) {
-	        console.log(err);
-	    }
+	Models.create({
+		'md5': data['port'],
+		'port': data['port'],
+		'host': data['host'],
+		'password': data['password'],
+		'add_time': data['add_time'],
 	});
 	res.send(req.body);
 });
@@ -134,6 +128,3 @@ app.get('/api/redis_info', jsonParser, (req, res) => {
 		res.send(rows);
 	});
 });
-
-
-// (' + data['md5'] + ',' + data['host'] + ',' + data['post'] + ',' + data['password'] + ',' + data['add_time'] + ');'

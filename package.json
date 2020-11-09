@@ -23,6 +23,7 @@
     "hashlib": "^1.0.1",
     "nodemon": "^2.0.6",
     "redis": "^3.0.2",
+    "sequelize": "^6.3.5",
     "sqlite3": "^5.0.0"
   }
 }
